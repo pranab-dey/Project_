@@ -6,23 +6,18 @@ import Slider from './components/slider';
 
 function App() {
 	const [slide, setSlide] = useState(0);
-	const handleSlide = (e) => {
-		setSlide(e.target.value);
-		console.log(e.target.value);
-	};
 
 	return (
 		<>
-			{JSON.stringify(slide)}
 			<Slider
-				min={slide}
+				min={0}
 				max={100}
 				value={slide}
 				step={1}
-				onChange={handleSlide}
+				handleChange={(e) => {
+					setSlide(e.target.value);
+				}}
 			/>
-
-			<input type='range' min='-10' max='10'></input>
 		</>
 	);
 }

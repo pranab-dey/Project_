@@ -1,7 +1,7 @@
 import React from 'react';
 import './slider.css';
 
-export default function ({ min, max, step, value, onChange }) {
+export default function ({ min, max, step, value, handleChange }) {
 	return (
 		<>
 			<input
@@ -9,10 +9,11 @@ export default function ({ min, max, step, value, onChange }) {
 				min={min}
 				max={max}
 				step={step}
-				value={value}
-				onChange={onChange}
+				defaultValue={value}
+				onChange={handleChange}
 				className='slider'
 			/>
+			<label>{value}</label>
 		</>
 	);
 }
